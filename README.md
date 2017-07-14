@@ -2,6 +2,8 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.1.
 
+App de prueba para entrenar Angular 4. Gestor de roms de la Bartop Arcade para buscar las existentes y poder copiar a otros retropie's conectados a la red.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
