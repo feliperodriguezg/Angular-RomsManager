@@ -1,6 +1,7 @@
 <div class="row">
-  <div class="col-sm-12 col-md-12">
-    <div class="thumbnail col-lg-3" *ngFor="let item of results; let i = index">
+  
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let item of results; let i = index">
+      <div style="padding:5px" class="thumbnail">
       <img alt="100%x200" data-src="holder.js/100%x200" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MiAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTVkNDBkNWYyNGUgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNWQ0MGQ1ZjI0ZSI+PHJlY3Qgd2lkdGg9IjI0MiIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI4OS44MDQ2ODc1IiB5PSIxMDUuMSI+MjQyeDIwMDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" data-holder-rendered="true" style="height: 200px; width: 100%; display: block;">
       <div class="caption">
         <h3>{{item.name}} {{i+1}}</h3>
@@ -9,20 +10,20 @@
         </p>
         <p>
           <a href="#" class="btn btn-primary" role="button">Copiar</a> 
-          <a href="#" class="btn btn-default" role="button">Ver más</a>
+          <a href="#" class="btn btn-default" role="button">Ver m&aacute;s</a>
         </p>
       </div>
+      </div>
     </div>
-
-  </div>
-
-  
 <nav aria-label="...">
+</nav>
+</div>
+<div class="row">
   <ul class="pager">
     <li class="previous"><a href="#"><span aria-hidden="true">&larr;</span> Anterior</a></li>
     <li class="next"><a href="#">Siguiente <span aria-hidden="true">&rarr;</span></a></li>
   </ul>
-</nav>
 </div>
+
 
 
