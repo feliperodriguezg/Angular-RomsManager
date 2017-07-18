@@ -1,3 +1,5 @@
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DataService } from './services/data.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -8,20 +10,41 @@ import { AppComponent } from './app.component';
 import { ContainerComponent } from './commom/container/container.component';
 import { HeaderComponent } from './commom/header/header.component';
 
-import { AppRoutingModule } from './modules/app-routing.module';
+import { LoginComponent } from './login/login.component';
+
+import { RouterModule } from '@angular/router';
+import { Globals } from './globals/globals.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ContainerComponent
+    ContainerComponent,
+    LoginComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     HttpModule,
-    AppRoutingModule
+    BrowserAnimationsModule,
+    RouterModule.forRoot([
+      {
+        path: '',
+        component: ContainerComponent
+      },
+      {
+        path: 'login',
+        component: LoginComponent
+      }
+    ])
   ],
-  providers: [DataService],
+  providers: [DataService, Globals],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  public logged: boolean;
+
+  constructor(private globals: Globals) {
+    console.log('access_token: ' + this.globals.getAccessToken());
+  }
+}

@@ -1,3 +1,6 @@
+import { SearchRequest } from '../models/item_request';
+import { Router } from '@angular/router';
+import { Globals } from '../../globals/globals.component';
 import { PlatformComponent } from '../models/platform.model.component';
 
 import { Component, OnInit } from '@angular/core';
@@ -14,6 +17,7 @@ export class HeaderComponent implements OnInit {
 
   platform = 'SNES';
   search = 'test';
+  model = new SearchRequest();
 
   opciones: Array<PlatformComponent> = [
     {id: 1, name: 'SNES'},
@@ -25,7 +29,20 @@ export class HeaderComponent implements OnInit {
 
 
 
-  constructor() { }
+  constructor(private globals: Globals, private route: Router) { }
+
+  buscar() {
+    console.log('click');
+    this.route.navigateByUrl('?platform=' + this.model.platform + '&name=' + this.model.search);
+  }
+
+  getStatus(): boolean {
+    return this.globals.logged;
+  }
+
+  logout() {
+    this.globals.loggout();
+  }
 
   ngOnInit() {
   }
