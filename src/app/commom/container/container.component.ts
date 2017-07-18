@@ -18,24 +18,27 @@ export class ContainerComponent implements OnInit {
   request = new SearchRequest();
 
   constructor(private serviceData: DataService, private globals: Globals, private route: ActivatedRoute) {
-    console.log(this.route.queryParams['platform']);
+    
   }
   loadResults() {
     return this.serviceData.getAll()
     .subscribe(res => this.results = res);
   }
   search() {
-    this.request.platform = this.platform;
+    console.log('init search');
     return this.serviceData.searchGame(this.request)
     .subscribe((res) => this.results = res);
   }
   ngOnInit() {
-    console.log('init');
     this.loadResults();
-    this.route.queryParams.subscribe(query => this.request.platform = query['platform']);
-    this.route.queryParams.subscribe(query => this.request.search = query['name']);
-    console.log('plataforma: ' + this.request.platform);
-    console.log('búsqueda: ' + this.request.search);
+    this.route.queryParams.subscribe(query => {
+      this.request.platform = query['platform'];
+      this.request.search = query['name'];
+      console.log('platform: ' + this.request.platform);
+      console.log('search: ' + this.request.search);
+      this.search();
+    });
+          
   }
 
 }

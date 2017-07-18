@@ -33,7 +33,11 @@ export class HeaderComponent implements OnInit {
 
   buscar() {
     console.log('click');
-    this.route.navigateByUrl('?platform=' + this.model.platform + '&name=' + this.model.search);
+    let query = '?platform=' + this.model.platform;
+    if(this.model.search){
+      query = query + '&name=' + this.model.search;
+    }
+    this.route.navigateByUrl(query);
   }
 
   getStatus(): boolean {

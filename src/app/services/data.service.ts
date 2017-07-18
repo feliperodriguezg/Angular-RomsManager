@@ -16,7 +16,7 @@ export class DataService {
   }
 
   searchGame(body: SearchRequest): Observable<ItemResultadoComponent[]> {
-      const options = new RequestOptions();
+      let options = new RequestOptions();
       options.headers.append('Content-Type', 'application/json');
       options.headers.append('Authorization', 'Bearer ');
       return this.http.post(this.urlApi, body, options).map((res: Response) => res.json());
