@@ -18,7 +18,7 @@ export class ContainerComponent implements OnInit {
   request = new SearchRequest();
 
   constructor(private serviceData: DataService, private globals: Globals, private route: ActivatedRoute) {
-    
+
   }
   loadResults() {
     return this.serviceData.getAll()
@@ -38,7 +38,7 @@ export class ContainerComponent implements OnInit {
       console.log('search: ' + this.request.search);
       this.search();
     });
-          
+
   }
 
 }

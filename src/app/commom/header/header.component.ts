@@ -20,11 +20,11 @@ export class HeaderComponent implements OnInit {
   model = new SearchRequest();
 
   opciones: Array<PlatformComponent> = [
-    {id: 1, name: 'SNES'},
-    {id: 2, name: 'NES'},
-    {id: 3, name: 'MEGADRIVE'},
-    {id: 4, name: 'NEOGEO'},
-    {id: 5, name: 'ARCADE'}
+    {id: 1, name: 'snes'},
+    {id: 2, name: 'nes'},
+    {id: 3, name: 'megadrive'},
+    {id: 4, name: 'neogeo'},
+    {id: 5, name: 'arcade'}
   ];
 
 
@@ -33,8 +33,13 @@ export class HeaderComponent implements OnInit {
 
   buscar() {
     console.log('click');
-    let query = '?platform=' + this.model.platform;
-    if(this.model.search){
+    let query = '';
+
+    if (this.model.platform) {
+      query = '?platform=' + this.model.platform;
+    }
+
+    if (this.model.search && this.model.platform.length > 0) {
       query = query + '&name=' + this.model.search;
     }
     this.route.navigateByUrl(query);
